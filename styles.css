@@ -333,7 +333,7 @@ body {
 .hero-content {
     position: relative;
     display: grid;
-    grid-template-columns: 55% 45%;
+    grid-template-columns: 1fr 1fr;
     min-height: 100vh;
     align-items: center;
 }
@@ -488,7 +488,7 @@ body {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
 
@@ -1263,6 +1263,23 @@ body {
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+        padding: 2rem;
+    }
+    
+    .hero-text-section {
+        order: 1;
+    }
+    
+    .hero-image-section {
+        order: 2;
+    }
+}
+
 @media (max-width: 1024px) {
     .hero {
         min-height: 80vh;
@@ -1276,6 +1293,7 @@ body {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 3rem;
+        padding: 1.5rem;
     }
     
     .hero-text-section {
@@ -1304,7 +1322,12 @@ body {
     }
     
     .nav-container {
+        padding: 0.75rem 1rem;
+    }
+    
+    .hero-content {
         padding: 1rem;
+        gap: 2rem;
     }
     
     .nav-links {
@@ -1381,11 +1404,26 @@ body {
 
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.75rem;
+        line-height: 1.2;
     }
     
     .section-title {
-        font-size: 2rem;
+        font-size: 1.75rem;
+    }
+    
+    .hero-content {
+        padding: 0.5rem;
+        gap: 1.5rem;
+        min-height: auto;
+    }
+    
+    .container {
+        padding: 0 0.75rem;
+    }
+    
+    .nav-container {
+        padding: 0.5rem 0.75rem;
     }
     
     .chat-button {
@@ -1396,17 +1434,26 @@ body {
     .chat-icon {
         font-size: 1.5rem;
     }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .service-card {
+        padding: 1.5rem;
+    }
 }
 
-/* Global Link Styles - Make all links white and readable */
+/* Global Link Styles - Make all links blue and readable */
 a {
-    color: #ffffff !important;
+    color: #007acc !important;
     text-decoration: underline;
     transition: color 0.3s ease, opacity 0.3s ease;
 }
 
 a:visited {
-    color: #ffffff !important;
+    color: #005999 !important;
 }
 
 a:hover {
@@ -1414,15 +1461,15 @@ a:hover {
     opacity: 0.8;
 }
 
-/* Chat Message Links - Ensure they're always white and readable */
+/* Chat Message Links - Make them blue for better readability */
 .message-content a {
-    color: #ffffff !important;
+    color: #007acc !important;
     text-decoration: underline;
     font-weight: 500;
 }
 
 .message-content a:visited {
-    color: #ffffff !important;
+    color: #005999 !important;
 }
 
 .message-content a:hover {
@@ -1430,15 +1477,24 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Footer Links - Override existing styles */
+/* Footer Links - Make them blue for better readability */
 .footer-column a,
 .footer-legal a {
-    color: #ffffff !important;
+    color: #007acc !important;
 }
 
 .footer-column a:hover,
 .footer-legal a:hover {
     color: #01B2D6 !important;
+}
+
+/* Navigation Links - Keep white on blue navbar */
+.nav-link {
+    color: #ffffff !important;
+}
+
+.nav-link:hover {
+    color: #f0f0f0 !important;
 }
 
 /* Chat Logo Styling */
